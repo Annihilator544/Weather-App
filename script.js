@@ -46,8 +46,8 @@ function Submit(){
     })
     .then(function(response) {
         document.body.style.fontFamily="cookie2";
-    document.body.style.flexDirection = "row";
-    document.body.innerHTML = `<div id="map" style="width:300px;height:100vh;"></div><div class="info"><h1>${response.location.name}</h1><h3>Temp: ${response.current.temp_c} °C</h3><h3>Feels Like: ${response.current.feelslike_c} °C</h3><h3 class="img"><img src='${response.current.condition.icon}'>${response.current.condition.text}</h3><h3>Wind Speed: ${response.current.wind_kph}</h3><h3>Humidity: ${response.current.humidity}</h3><h3>Clouds: ${response.current.cloud}</h3><h3>Uv Radiation: ${response.current.uv}</h3></div>
+    document.body.style.flexDirection = "column";
+    document.body.innerHTML = `<div id="map" style="width:100vh;height:300px;"></div><div class="info"><h1>${response.location.name}</h1><h3>Temp: ${response.current.temp_c} °C</h3><h3>Feels Like: ${response.current.feelslike_c} °C</h3><h3 class="img"><img src='${response.current.condition.icon}'>${response.current.condition.text}</h3><h3>Wind Speed: ${response.current.wind_kph}</h3><h3>Humidity: ${response.current.humidity}</h3><h3>Clouds: ${response.current.cloud}</h3><h3>Uv Radiation: ${response.current.uv}</h3></div>
     <script src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeSLKGC-l-Snb-kOUigxqtXRgvPb84XFI&callback=Map123"></script>`;
     initMap(response.location.lat,response.location.lon);
