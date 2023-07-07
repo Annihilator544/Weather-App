@@ -3,63 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/Svgs&Images/logo.png" type="image/png">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeSLKGC-l-Snb-kOUigxqtXRgvPb84XFI&callback=Map123"></script>
 </head>
 <body>
-    
-    <div class="sidebar">
-        <div class="Name">
-            Aditya Sharma
+    <h1>
+        <div class="content">
+        <p>Weather App</p>
+        <label for="city" >
+            <input type="text" name="city" id="city" placeholder="Enter City Name">
+            <button onclick="Submit()">Search</button>
+        </label>
         </div>
-        <div class="searchBar">
-            <form class="form-container" name="myForm" id="myFor" onsubmit="Search()" >
-            <input type="text" id="search" placeholder="Search">
-            </form>
-        </div>
-        <div class="lists">
-            <div class="item" id="1" onclick="LoadList(this.id)">
-                <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="yellow" fill-opacity="75%" class="bi bi-brightness-high" viewBox="0 0 16 16">
-                    <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-                  </svg></span>
-                <span>My Day</span>
-            </div>
-            <div class="item" id="2" onclick="LoadList(this.id)">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"  fill-opacity="75%" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-                      </svg></span>
-                <span>Important</span>
-            </div>
-            <div class="item" id="3" onclick="LoadList(this.id)">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" fill-opacity="75%" class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                      </svg></span>
-                <span>Getting Started</span>
-            </div>
-            <div class="addlist" onclick="createList()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
-                <span>Add List</span>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="Title">
-            Getting Started
-        </div>
-        <div class="addTask"></div>
-            <button onclick="addTask()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
-                Add a Task
-            </button>
-            <!-- <div class="footer">
-                <p id="footer"></p>
-            </div> -->
-    </div>
-    
+    </h1>
+    <!-- <div id="map" style="width:300px;height:100vh;"></div> -->
     <script src="script.js"></script>
+    
+    
 </body>
 </html>
