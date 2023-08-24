@@ -40,7 +40,7 @@ function Submit(){
     console.log("hello");
     var city = document.getElementById("city").value;
     console.log(city);
-    fetch('https://api.weatherapi.com/v1/current.json?key=8fa376daa91a4c3bbc3173100230707&q='+city, {mode: 'cors'})
+    fetch('https://api.weatherapi.com/v1/current.json?key=384dc8282ef7490e97c193436232408&q='+city, {mode: 'cors'})
   .then(function(response) {
     return response.json();
     })
